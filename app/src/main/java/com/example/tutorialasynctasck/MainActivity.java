@@ -1,3 +1,6 @@
+/*
+* https://codinginflow.com/tutorials/android/asynctask
+*/
 package com.example.tutorialasynctasck;
 
 import android.os.Bundle;
@@ -5,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.SeekBar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ViewHolder mViewHolder = new ViewHolder();
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 this.mViewHolder.start.setText("start");
                 this.mViewHolder.cadencia.setProgress(0);
 
-               
+
 
             } else if (this.mViewHolder.start.getText() != "stop") {
                 this.mViewHolder.start.setText("stop");
