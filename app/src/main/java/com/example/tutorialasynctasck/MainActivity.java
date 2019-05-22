@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ViewHolder mViewHolder = new ViewHolder();
+    private ExampleAsyncTask task;
 
 
     @Override
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         //new MyTask().execute();
+ this.task = new ExampleAsyncTask(this,this.mViewHolder.cadencia);
 
     }
 
@@ -41,14 +43,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+
             } else if (this.mViewHolder.start.getText() != "stop") {
                 this.mViewHolder.start.setText("stop");
 
                 this.mViewHolder.cadencia.setProgress(50);
 
 
-                ExampleAsyncTask task = new ExampleAsyncTask(this,this.mViewHolder.cadencia);
-                task.execute(10);
+
+                this.task.execute(10);
 
 
 
