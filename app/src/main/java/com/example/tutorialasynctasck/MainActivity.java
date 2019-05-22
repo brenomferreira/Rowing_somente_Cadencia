@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 this.mViewHolder.start.setText("start");
                 this.mViewHolder.cadencia.setProgress(0);
 
-
+this.task.cancel(true);
 
 
             } else if (this.mViewHolder.start.getText() != "stop") {
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 this.mViewHolder.cadencia.setProgress(50);
 
 
-
+              this.task = new ExampleAsyncTask(this,this.mViewHolder.cadencia);
                 this.task.execute(10);
 
 

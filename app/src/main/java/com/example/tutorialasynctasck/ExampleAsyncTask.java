@@ -32,7 +32,9 @@ public class ExampleAsyncTask extends AsyncTask<Integer, Integer, String> {
     protected String doInBackground(Integer... integers) {
         for (int i = 0; i < integers[0]; i++) {
             publishProgress((i * 100) / integers[0]);
-
+            if (isCancelled()) {
+                break;
+            }
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
